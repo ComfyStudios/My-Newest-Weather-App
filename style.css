@@ -2,3 +2,11 @@ h1 {
   text-align: center;
   color: aquamarine;
 }
+
+li {
+  list-style: none;
+}
+
+.discription {
+  text-align: right;
+}
