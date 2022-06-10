@@ -1,3 +1,7 @@
+body {
+  background-color: #f8f6fc;
+}
+
 h1 {
   text-align: center;
   color: aquamarine;
@@ -5,8 +9,23 @@ h1 {
 
 li {
   list-style: none;
+  font-size: 20px;
+  font-weight: 70;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+}
+
+.sun {
+  text-align: right;
+}
+
+.main {
+  text-align: left;
 }
 
 .discription {
   text-align: right;
+}
+
+button {
+  background-color: #885ef1;
 }
