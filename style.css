@@ -26,6 +26,20 @@ li {
   text-align: right;
 }
 
+.search {
+  padding: 15px;
+  border-radius: 30px 30px 30px 30px;
+  border: #f8f9fa;
+  margin: 30px;
+  width: 350px;
+}
+
 button {
   background-color: #885ef1;
+  border-radius: 30px 30px 30px 30px;
+  border: #885ef1;
+  color: #f8f6fc;
+  width: 100px;
+  margin: 30px auto;
+  padding: 10px;
 }
