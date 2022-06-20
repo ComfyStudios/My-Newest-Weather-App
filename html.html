@@ -11,17 +11,21 @@
       crossorigin="anonymous"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="Javascript"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Cute Weather App</title>
   </head>
+  
   <body>
     <div class="container">
       <form id="search-form">
@@ -31,10 +35,11 @@
       <div class="row">
         <div class="col">
           <div class="main">
+            <div class="temperature-description" id="temperature-description"></div>
             <ul>
-              <li><strong> West Covina </strong></li>
+              <li id="city"><strong> West Covina </strong></li>
               <li>
-                <strong>27°C </strong
+                <strong id="temperature">27°C </strong
                 >
                 <li class="sun"><svg
                   class="sun"
@@ -54,6 +59,8 @@
           </div>
         </div>
       </div>
+    
+
       <div class="col">
         <div class="discription">
           <ul>
