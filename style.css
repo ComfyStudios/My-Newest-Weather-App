@@ -7,8 +7,10 @@ body {
 }
 
 h1 {
-  text-align: center;
-  color: aquamarine;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 70;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
 }
 
 li {
