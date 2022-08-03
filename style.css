@@ -30,6 +30,11 @@ li {
 
 .description {
   text-align: right;
+  text-transform: capitalize;
+}
+
+.humidity {
+  text-align: right;
 }
 
 .search {
