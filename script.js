@@ -14,7 +14,7 @@ function displayTemperature(response) {
 }
 
 let apiKey = "2a953d8a53343c52593a07ae6489702d";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=west covina&appid=2a953d8a53343c52593a07ae6489702d&units=Imperial`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=west Covina&appid=2a953d8a53343c52593a07ae6489702d&units=Imperial`;
 
-let city = "West Covina";
 axios.get(apiUrl).then(displayTemperature);
+searchCity("West Covina");
