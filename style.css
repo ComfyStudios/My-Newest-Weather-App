@@ -45,6 +45,10 @@ li {
   width: 350px;
 }
 
+src {
+  text-align: right;
+}
+
 button {
   background-color: #885ef1;
   border-radius: 30px 30px 30px 30px;
