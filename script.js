@@ -12,8 +12,6 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = response.data.main.humidity;
-  hoursElement.innerHTML = response.data.hours.main;
-  nowElement.innerHTML = `${hours}:${minutes}`;
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
