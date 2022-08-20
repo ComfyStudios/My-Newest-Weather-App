@@ -19,7 +19,6 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let city = "West Covina";
   let apiKey = "2a953d8a53343c52593a07ae6489702d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=Imperial`;
   axios.get(apiUrl).then(displayTemperature);
@@ -31,7 +30,7 @@ function handleSumbit(event) {
   search(cityInputElement.value);
 }
 
-searchCity("West Covina");
+search("West Covina");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
