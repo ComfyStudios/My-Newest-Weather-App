@@ -21,7 +21,6 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Cute Weather App</title>
   </head>
@@ -39,29 +38,29 @@
             <h1 id="city"><strong></strong></h1>
             <ul>
               <li>
-                <strong id="temperature"></strong
-                >
-                <img src="Sun" alt="clear" id="icon" class ="float-right"/>
-                </li>
+                <strong id="temperature"></strong>
+                <img src="" alt="clear" id="icon" class ="float-right"/>
               </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="description">
-          <ul>
-            <li id="description"></li>
-            <li>Humidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind"></span> mph</li>
+            </li>
           </ul>
         </div>
       </div>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"
-      ></script>
     </div>
-  </body>
+    <div class="col">
+      <div class="description">
+        <ul>
+          <li id="description"></li>
+          <li>Humidity: <span id="humidity"></span>%</li>
+          <li>Wind: <span id="wind"></span> mph</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+  ></script>
+</body>
+<script src="script.js"></script>
 </html>

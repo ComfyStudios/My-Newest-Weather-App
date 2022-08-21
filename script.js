@@ -30,7 +30,7 @@ function handleSumbit(event) {
   search(cityInputElement.value);
 }
 
-search("West Covina");
+search("Covina");
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", handleSumbit);
