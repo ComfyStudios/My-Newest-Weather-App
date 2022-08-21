@@ -29,7 +29,7 @@
   <body>
     <div class="container">
       <form id="search-form">
-        <input type="text" placeholder="City name" class="search" id="city-input">
+        <input type="text" placeholder="City name" class="search" id="city-input" autocomplete="off">
         <button type="submit" value="submit">Submit</button>
       </form>
       <div class="row">
@@ -48,12 +48,9 @@
           </div>
         </div>
       </div>
-    
-
       <div class="col">
         <div class="description">
           <ul>
-            <li id ="time">12:42</li>
             <li id="description"></li>
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Wind: <span id="wind"></span> mph</li>
