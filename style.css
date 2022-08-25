@@ -20,10 +20,6 @@ li {
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
 }
 
-.sun {
-  text-align: right;
-}
-
 .main {
   text-align: left;
 }
@@ -57,4 +53,9 @@ button {
   width: 100px;
   margin: 30px auto;
   padding: 10px;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
 }
