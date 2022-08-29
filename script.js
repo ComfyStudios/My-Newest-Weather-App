@@ -30,7 +30,14 @@ function handleSumbit(event) {
   search(cityInputElement.value);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = "Forecast";
+}
+
 search("Covina");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSumbit);
+displayForecast();
