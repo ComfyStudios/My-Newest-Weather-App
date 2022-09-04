@@ -19,7 +19,7 @@ function formateDate(timestamp) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -44,12 +44,14 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
 }
 
 function search(city) {
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -70,21 +72,19 @@ function displayForecast(response) {
         forecastHTML +
         `
   <div class="col-2">
-  <div>${forecastDay.dt}</div>
+  <div class="weather-forecast-date">${formateDate(forecastDay.dt)}</div>
   <img
-  src="https://openweathermap.org/img/wn/${formateDay(
-    forecastDay.weather[0].icon
-  )}@2x.pg"
-  alt="weather"
+  src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+  alt=""
   width="42"
   />
-  <div class="Weather-forecast-temperature">
+  <div class="weather-forecast-temperature">
   <span class="weather-forecast-temperature-max"> ${Math.round(
     forecastDay.temp.max
-  )} | </span>
+  )}° | </span>
   <span class="weather-forecast-temperature-min"> ${Math.round(
     forecastDay.temp.min
-  )}</span>
+  )}° </span>
   </div>
   </div>
   `;
