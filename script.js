@@ -18,7 +18,7 @@ function formateDate(timestamp) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "2a953d8a53343c52593a07ae6489702d";
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(aprUrl).then(displayForecast);
@@ -48,7 +48,7 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "2a953d8a53343c52593a07ae6489702d";
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=Imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -60,32 +60,46 @@ function handleSumbit(event) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class ="row">`;
-  let days = ["Thurs", "Fri", "Sat", "Sun"];
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col-2">
-  <div>${day}</div>
+  <div>${forecastDay.dt}</div>
   <img
-  src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+  src="https://openweathermap.org/img/wn/${formateDay(
+    forecastDay.weather[0].icon
+  )}@2x.pg"
   alt="weather"
   width="42"
   />
   <div class="Weather-forecast-temperature">
-  <span class="weather-forecast-temperature-max"> 91° | </span>
-  <span class="weather-forecast-temperature-min"> 75°</span>
+  <span class="weather-forecast-temperature-max"> ${Math.round(
+    forecastDay.temp.max
+  )} | </span>
+  <span class="weather-forecast-temperature-min"> ${Math.round(
+    forecastDay.temp.min
+  )}</span>
   </div>
   </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function formateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 search("Covina");
