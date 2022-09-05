@@ -19,7 +19,7 @@ function formateDate(timestamp) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -62,6 +62,7 @@ function handleSumbit(event) {
 }
 
 function displayForecast(response) {
+  console.log(response.data);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -72,13 +73,13 @@ function displayForecast(response) {
         forecastHTML +
         `
   <div class="col-2">
-  <div class="weather-forecast-date">${formateDate(forecastDay.dt)}</div>
+  <div class="weather-forecast-date">${formateDay(forecastDay.dt)}</div>
   <img
   src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   alt=""
   width="42"
   />
-  <div class="weather-forecast-temperature">
+  <div class="Weather-forecast-temperature">
   <span class="weather-forecast-temperature-max"> ${Math.round(
     forecastDay.temp.max
   )}° | </span>
